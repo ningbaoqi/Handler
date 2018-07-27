@@ -14,4 +14,4 @@
 |必须在UI线程中创建AsyncTask的实例|
 |必须在UI线程中调用AsyncTask的execute方法|
 |AsyncTask的onPostExecute、OnpreExecute、doInBackground、onProgressUpdate方法，不应该由程序员代码调用，而是由Android系统负责调用|
-|每个AsyncTask只能被执行一次，多次调用将会引发异常,但是在多次创建AsyncTask子类对象的时候，因为AsyncTask内部是一个线程池的结构，所以需要等待原来的AsyncTask执行完成之后，才能执行刚启动的AsyncTask|
+|每个AsyncTask只能被执行一次，即只能调用一次execute方法；多次调用将会引发异常,但是在多次创建AsyncTask子类对象的时候，因为AsyncTask内部是一个线程池的结构，所以需要等待原来的AsyncTask执行完成之后，才能执行刚启动的AsyncTask|
