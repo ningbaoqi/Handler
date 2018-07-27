@@ -5,6 +5,8 @@
 [ThreadLocal的工作原理](https://github.com/ningbaoqi/Handler/commit/5cadf4cddb26e081a02b16caecfc251b0f523d6e)
 ### MessageQueue的工作原理
 [MessageQueue的工作原理](https://github.com/ningbaoqi/Handler/commit/9419efcce9b2cfc63748b4b38bf6e17c2b9f6356)
+### Looper的工作原理
+[Looper的工作原理](https://github.com/ningbaoqi/Handler/commit/8810af5244fac2f794bfa78277d2dcc3b73a9fc1)
 ##### Handler引起的内存泄露以及解决办法
 + 当Activity中的`成员变量Handler不是static`的时候，当该Activity要回收的时候，由于Handler对象有可能在做一些耗时操作，导致Handler对象没有被释放，所以该Activity对象也不会被释放，这样就导致了Activity没有被回收，停留在堆内存当中，就造成了`内存泄露`；解决这个问题的方法是将Handler对象设置成为`static`，在Activity的`onDestroy()`方法中调用`handler的removeCallbacks()方法`；
 ##### 自定义一个线程相关的Handler
