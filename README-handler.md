@@ -45,3 +45,5 @@ public class TestActivity extends AppCompatActivity {
     }
 }
 ```
+### 主线程的消息循环
+[主线程的消息循环](https://github.com/ningbaoqi/Handler/commit/f931d57bf0fed2a28a714ddf6cd15cb5a47de375)
