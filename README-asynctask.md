@@ -18,7 +18,7 @@
 #### AsyncTask的详细说明
 [AsyncTask的详细说明](https://github.com/ningbaoqi/Handler/commit/02c908c81d92b220359543b8fa4962855bba5aa8)
 #### AsyncTask的机制原理
-+ `AsyncTask`的本质是一个`静态的线程池`，`AsyncTask`派生出的子类可以实现不同的`异步任务`，这些异步任务都是提交到静态的线程池中执行；线程池中的`工作线程`执行`doInBackground(mParam)`方法执行异步任务，当任务状态改变之后，`工作线程`会向`UI线程`发送消息，`AsyncTask`内部的`InternalHandler`响应这些消息，并调用相关的回调方法；
++ `AsyncTask`的本质是一个`静态的线程池`，`AsyncTask`派生出的子类可以实现不同的`异步任务`，这些异步任务都是提交到静态的线程池中执行；线程池中的`工作线程`执行`doInBackground(mParam)`方法执行异步任务，当任务状态改变之后，`工作线程`会向`UI线程`发送消息，`AsyncTask`内部的`InternalHandler`响应这些消息，并调用相关的回调方法；[AsyncTask调用流程](https://github.com/ningbaoqi/Handler/commit/c0c6d7d95b07f9c6fe7652155e829728fdaabf9c)
 #### AsyncTask的注意事项
 
 |AsyncTask的注意事项|说明|
