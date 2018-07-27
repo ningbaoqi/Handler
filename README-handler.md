@@ -1,5 +1,5 @@
 ### Handler
-+ Handler是通过发送和处理`Message`和`Runnable`对象来关联相对应线程的`MessageQueue`，MessageQueue是采用单链表的数据结构来存储消息队列的，可以让对应的`Message`和`Runnable`在未来的某个时间点进行相应处理，让自己想要处理的耗时操作放在`子线程`，让`更新UI`的操作放在`主线程`；
++ Handler是通过发送和处理`Message`和`Runnable`对象来关联相对应线程的`MessageQueue`，MessageQueue是采用单链表的数据结构来存储消息队列的，可以让对应的`Message`和`Runnable`在未来的某个时间点进行相应处理，让自己想要处理的耗时操作放在`子线程`，让`更新UI`的操作放在`主线程`；[Handler的工作原理](https://github.com/ningbaoqi/Handler/commit/459794e5e84829c9454ff59d755e20df28edd91b)
 ### ThreadLocal
 + ThreadLocal并不是线程，它的作用是可以在每个线程中存储数据，Handler内部获取到当前线程的Looper就是使用了ThreadLocal，ThreadLocal可以在不同的线程中互不干扰的存储并提供数据，通过ThreadLocal可以轻松获取每个线程的Looper；ThreadLocal是一个线程内部的数据存储类，通过它可以在指定的线程中存储数据，数据存储以后，只有在指定线程中可以获取到存储的数据，对于其他线程来说则无法获取到数据；
 [ThreadLocal的工作原理](https://github.com/ningbaoqi/Handler/commit/5cadf4cddb26e081a02b16caecfc251b0f523d6e)
