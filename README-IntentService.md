@@ -17,3 +17,6 @@
 |为Service的onStartCommand()方法提供了默认实现，该实现会将请求Intent添加到队列中|
 
 + 从上面的介绍可以看出，扩展IntentService实现Service无须重写onBind()、onStartCommand()方法，只要`重写onHandleIntent()`方法即可；
+
+#### IntentService用法
+[IntentService用法](https://github.com/ningbaoqi/Handler/blob/master/README-IntentService.md)
