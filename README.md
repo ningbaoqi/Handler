@@ -16,3 +16,6 @@
 |View.postDelayed(Runnable , long)|
 
 [子线程不能更新UI的其他解决方法](https://github.com/ningbaoqi/Handler/commit/578d1127fa41066bd731f3e922e424d650382528)
+
+### Android中的线程池
+[Android中的线程池](https://github.com/ningbaoqi/Handler/blob/master/README-thread.md)
