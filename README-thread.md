@@ -7,4 +7,4 @@
 |能够对线程进行简单的管理，并提供定时执行以及指定间隔循环执行等功能|
 
 #### 线程池的参数说明
-[线程池的参数说明](https://github.com/ningbaoqi/Handler/blob/master/README-thread.md)
+[线程池的参数说明](https://github.com/ningbaoqi/Handler/commit/7a2bf3cee7a6c6896b2c87551196a7aea9209419)
