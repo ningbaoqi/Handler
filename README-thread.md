@@ -22,6 +22,7 @@
 |------|-------|
 |FixedThreadPool|通过Executors.newFixedThreadPool()方法创建， 它是一种线程数量固定的线程池，当线程处于空闲状态时，他们并不会被回收，除非线程池被关闭了，当所有的线程都处于活动状态时，新任务就会处于等待状态，直到由线程空闲出来，由于FixedThreadPool只有核心线程并且这些核心线程不会被回收，这意味着它能够更加快速的响应外界的请求|
 |CachedThreadPool|通过Executors.newCachedThreadPool()方法来创建，它是一种线程数量不定的线程池，它只有非核心线程，并且其最大线程数为Integer.MAX_VALUE，相当于最大线程数可以任意大，当线程池中的线程都处于活跃状态时，线程池会创建新的线程来处理新任务，否则就会利用空闲的线程来处理新任务，线程池中的空闲线程都有超时控制，这个超时时长为60s，超过60s闲置线程就会被回收，CachedThreadPool的任务队列其实相当于一个空集合，这将导致任何任务都会立即运行，因为在这种情况下SynchronousQueue是无法插入任务的，SynchronousQueue是一个非常特殊的队列，在很多情况下可以把它理解为一个无法存储元素的队列，CachedThreadPool比较适合执行大量的耗时较少的任务，当整个线程池都处于闲置状态时，线程池中的线程都会超时而被停止，这个时候CachedThreadPool中实际上是没有任何线程的，它几乎是不占用任何系统资源的|
+|ScheduledThreadPool|通过Executors.newScheduledThreadPool()方法来创建，它的核心线程数量是固定的，而非核心线程数是没有限制的，并且当非核心线程闲置时会被立即回收，ScheduledThreadPool这类线程池主要用于执行定时任务和具有固定周期的重复任务|
 
 ##### FixedThreadPool
 
@@ -36,5 +37,17 @@ public static ExecutorService newFixedThreadPool(int var0) {
 ```
 public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, 2147483647, 60L, TimeUnit.SECONDS, new SynchronousQueue());
+}
+```
+
+##### ScheduledThreadPool
+
+```
+public static ScheduledExecutorService newScheduledThreadPool(int var0) {
+        return new ScheduledThreadPoolExecutor(var0);
+}
+
+public ScheduledThreadPoolExecutor(int var1) {
+        super(var1, 2147483647, 0L, TimeUnit.NANOSECONDS, new ScheduledThreadPoolExecutor.DelayedWorkQueue());
 }
 ```
