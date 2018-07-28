@@ -14,3 +14,5 @@
 |Activity.runOnUiThread(Runnable)|
 |View.post(Runnable)|
 |View.postDelayed(Runnable , long)|
+
+[子线程不能更新UI的其他解决方法](https://github.com/ningbaoqi/Handler/commit/578d1127fa41066bd731f3e922e424d650382528)
