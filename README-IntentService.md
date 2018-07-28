@@ -1,5 +1,5 @@
 ### IntentService
-+ 服务中的代码都是`默认运行在主线程`当中的，需要注意；`IntentService`是`Service的子类`,优先级比`Service`高，可以用其处理高优先级的任务，因此它不是普通的Service，它比普通的Service增加了额外的功能；`IntentService`是继承并处理`异步请求`的一个类，在`IntentService`内有一个`工作线程`来处理耗时操作，启动`IntentService`的方式和启动传统`Service`一样，同时，当任务执行完后，`IntentService`会`自动停止`，而不需要手动去控制或stopSelf()，另外，可以启动`IntentService`多次，而每一个`耗时操作`会以`工作队列`的方式在`IntentService`的`onHandleIntent`回调方法中执行，并且，每次只会执行`一个工作线程`，执行完第一个再执行第二个；
++ 服务中的代码都是`默认运行在主线程`当中的，需要注意；`IntentService`是`Service的子类`,优先级比`Service`高，可以用其处理高优先级的任务，因此它不是普通的Service，它比普通的Service增加了额外的功能；`IntentService`是继承并处理`异步请求`的一个类，在`IntentService`内有一个`工作线程`来处理耗时操作，启动`IntentService`的方式和启动传统`Service`一样，同时，当任务执行完后，`IntentService`会`自动停止`，而不需要手动去控制或stopSelf()，IntentService封装了HandlerThread和Handler；另外，可以启动`IntentService`多次，而每一个`耗时操作`会以`工作队列`的方式在`IntentService`的`onHandleIntent`回调方法中执行，并且，每次只会执行`一个工作线程`，执行完第一个再执行第二个；
 
 |Service本身存在的两个问题|
 |------|
